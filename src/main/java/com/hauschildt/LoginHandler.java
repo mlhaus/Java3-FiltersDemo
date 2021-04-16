@@ -35,16 +35,20 @@ public class LoginHandler extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
+        System.out.println(session.getAttribute("employee"));
         String task = request.getParameter("task");
         if (task != null && task.equals("logout")) {
             session.removeAttribute("employee");
             response.sendRedirect("login");
+            //System.out.println(session.getAttribute("employee"));
             return;
         }
         if (session.getAttribute("employee") != null) {
             response.sendRedirect("employees");
+            //System.out.println(session.getAttribute("employee"));
             return;
         }
+        //System.out.println(session.getAttribute("employee"));
         request.setAttribute("loginFailed", false);
         request.getRequestDispatcher("/WEB-INF/jsp/view/login.jsp").forward(request, response);
     }
