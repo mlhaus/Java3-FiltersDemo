@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>SalesFilter</filter-name>
+        <filter-class>com.hauschildt.filters.SalesFilter</filter-class>
+    </filter>
     <filter-mapping>
         <filter-name>SalesFilter</filter-name>
         <url-pattern>/employees/sales/*</url-pattern>
-    </filter-mapping>
-    <filter-mapping>
-        <filter-name>EmployeeFilter</filter-name>
-        <url-pattern>/employee/*</url-pattern>
     </filter-mapping>
     <servlet>
         <servlet-name>LoginHandler</servlet-name>
@@ -34,13 +34,4 @@
             <default-content-type>text/html</default-content-type>
         </jsp-property-group>
     </jsp-config>
-    <filter>
-        <filter-name>EmployeeFilter</filter-name>
-        <filter-class>com.hauschildt.filters.EmployeeFilter</filter-class>
-        <url-pattern>/employee/*</url-pattern>
-    </filter>
-    <filter>
-        <filter-name>SalesFilter</filter-name>
-        <filter-class>com.hauschildt.filters.SalesFilter</filter-class>
-    </filter>
 </web-app>
