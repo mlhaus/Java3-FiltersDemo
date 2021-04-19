@@ -1,5 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:useBean id="employee" scope="session" class="com.hauschildt.Employee" />
+<c:if test="${employee != null}">
+    <jsp:useBean id="employee" scope="session" class="com.hauschildt.data.Employee" />
+</c:if>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +14,8 @@
             <h1>Employee Landing Page</h1>
         </header>
         <section>
-            <p>Hello, ${employee.name}</p>
+            <p>Hello, ${employee.name}
+            </p>
             <a href="<c:url value="/employees/hr"/>">HR Pages</a><br /> 
             <a href="<c:url value="/employees/sales"/>">Sales Pages</a>
         </section>

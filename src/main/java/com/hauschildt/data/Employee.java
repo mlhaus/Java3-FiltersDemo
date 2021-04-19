@@ -81,4 +81,11 @@ public class Employee implements Serializable{
     public void setRoles(ArrayList<String> roles) {
         this.roles = roles;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" + "login=" + login + ", password=" + password + ", name=" + name + ", roles=" + roles + '}';
+    }
+    
+    
 }
